@@ -1,0 +1,113 @@
+<div class="accordion">
+
+  <div class="item">
+    <button class="heading">Aim 1 – Identify existing systems that impact produce prescription implementation and impact</button>
+    <div class="content">
+      <p>In Aim 1, we will implement Group Model Building (GMB) workshops at each of the participating community health centers: Waianae Coast Comprehensive Health Center, Waimanalo Health Center, and Hamakua-Kohala Health Center. These Group Model Building Workshops will be used to inform a community-specific CHW navigator training, which will be delivered to CHWs before they begin working with patients in the PRx program. <br><br> <b> What is GMB?</b> <br><br>&bull; GMB is a Community Based Participatory Research (CBPR) technique to engage communities in collectively identifying the causes of complex problems. GMB is usually done through a series of workshops with small group exercises called scripts.
+<br>&bull; It is used to better understand the systems that influence a problem and helps to visualize feedback loops instead of linear cause-and-effect chains.
+       <br><br> <b> What is GMB?</b> <br><br> For this study, GMB will be used as an approach to engage key community members adn leaders from partner organizations in several collaborative activities to identify drivers within their community systems that impact food insecurity, hypertension, and the success of PRx programs. GMB workshops will include 6-10 participants from the community, including patients, health care providers, CHWs, food retailers, health insurance providers, and health center leaders. <br> <br>After completion of these workshops, community-specific plans for addressing the barriers and successes identified through GMB will be used alongside the Pilinahā Framework (more on this framework below) to inform the development of the CHW navigator trainings.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <button class="heading">Aim 2 – Examine the impact of the CHW navigated PRx, in comparison to a program without CHWs, on participant blood pressure.</button>
+    <div class="content">
+      <p>There are two parts to <b> Aim 2. <br> <br> Part one: CHW Navigator Training </b></p>
+      <p>CHWs at each site will go through 1 ½ days of in-person activities to complete CHW Navigator Training. To gain lived experience in a PRx program, CHWs will participate in the PRx program one month prior to the in-person training. CHWs will receive vouchers and will be asked to share about their experience as a participant and what they purchased with their vouchers. </p> <b>Part two: Produce Prescription Program </b> <br><br>Around 60-130 patients will be enrolled at each of the 3 partner sites for a total of 250 participants. To be eligible, participants must: be a patient of the participating health center clinic, age 20 years and older, have a positive screen for food insecurity using a validated two-question tool, have physician-diagnosed hypertension and continued indications of SBP >130 mmHG, and have no prior history of cardiovascular disease. Each PRx program will be a 12-month, 2-group Randomized Controlled Trial (RCT).<br><br> Upon completing informed consent, participants will be randomized to either group:</p>
+      <ul>
+        <li> Group 1 (Intervention) will receive the monthly produce prescription ($100 vouchers or produce box) plus meet with a CHW at least every two months for support with overcoming barriers to participation, and connecting participants with community and health center resources to support their health.</li>
+        <li>Group 2 (Control) will receive the same monthly produce prescription, but will not have meetings with a CHW.</li>
+      </ul>
+        <p>Participants will then receive an orientation to the program that will cover signs and symptoms of hypertension, benefits of home blood pressure monitoring, hypertension medications, DASH diet principles, and instructions on how to redeem FV vouchers. All participants will also receive a free Blood Pressure monitor cuff to take readings at home. <br><br> Participants will complete surveys (baseline, 3-months, 6-months, 9-months, 12-months/exit) to provide data on household measures, medical and health behavior, diet, food insecurity, food assistance program participation, anthopometry, culture and connection, and blood pressure.</p>
+        
+    </div>
+  </div>
+
+  <div class="item">
+    <button class="heading">Aim 3 – Quantify the cost and the cost-effectivness of the PRx intervention</button>
+    <div class="content">
+      <p>After the PRx program ends, the research team will analyze the financial value of the intervention. This involves calculating the total cost to run the program (including vouchers, CHW training and salaries, and administrative costs) and comparing it to potential savings in healthcare costs. By looking at improvements in blood pressure, researchers can estimate how many heart-related health problems were prevented and how much money was saved on medical care.</p>
+    </div>
+  </div>
+
+</div>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  padding: 20px;
+}
+
+.accordion {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.item {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 8px;
+}
+
+.heading {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 16px 10px;
+  font-family: 'ITC New Baskerville', 'Baskerville', serif;
+  font-weight: 600;
+  font-size: 20pt;
+  color: #154734;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading::after {
+  content: '+';
+  font-size: 22px;
+  color: #154734;
+}
+
+.heading.open::after {
+  content: '−';
+}
+
+.content {
+  display: none;
+  padding: 0 10px 16px 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14pt;
+  color: #000000;
+  line-height: 1.6;
+}
+
+.content.open {
+  display: block;
+}
+const headings = document.querySelectorAll('.heading');
+
+headings.forEach(heading => {
+  heading.addEventListener('click', () => {
+    const content = heading.nextElementSibling;
+
+    // Close all others
+    headings.forEach(h => {
+      if (h !== heading) {
+        h.classList.remove('open');
+        h.nextElementSibling.classList.remove('open');
+      }
+    });
+
+    // Toggle clicked one
+    heading.classList.toggle('open');
+    content.classList.toggle('open');
+  });
+});
